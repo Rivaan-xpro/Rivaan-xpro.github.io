@@ -3,61 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rivaan Singh | Player 1</title>
+    <title>Rivaan Singh | Profile</title>
     <style>
-        /* Gaming Theme Settings */
+        /* Formal Hacker Layout */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Comic Sans MS', 'Impact', sans-serif;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         body {
-            background-color: #120428; /* Deep Space Purple */
-            color: #ffffff;
+            background-color: #050505; /* Deep Charcoal Black */
+            color: #00ff00; /* Terminal Green */
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Neon Mouse Trail */
+        /* Binary Mouse Trail */
         .trail-particle {
             position: fixed;
             pointer-events: none;
-            width: 12px;
-            height: 12px;
-            background: #00ffff; /* Neon Cyan */
-            box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
-            border-radius: 50%;
+            color: #00ff00;
+            font-size: 15px;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ff00;
             transform: translate(-50%, -50%);
-            animation: explode 0.5s linear forwards;
+            animation: fadeDown 0.5s ease-out forwards;
             z-index: 9999;
         }
 
-        @keyframes explode {
-            0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+        @keyframes fadeDown {
+            0% { opacity: 1; transform: translate(-50%, -50%) translateY(0); }
+            100% { opacity: 0; transform: translate(-50%, -50%) translateY(10px); }
         }
 
-        /* Header / Navbar */
+        /* Header Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background: #1a0933;
-            border-bottom: 4px dashed #ff00ff;
+            background: #0a0a0a;
+            border-bottom: 1px solid #00ff00;
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            color: #00ffff;
-            text-shadow: 3px 3px #ff00ff;
+            letter-spacing: 1px;
         }
 
-        /* Hero Screen */
+        .status {
+            font-size: 0.9rem;
+            color: #00ff00;
+        }
+
+        /* Hero Welcome Screen */
         .hero {
-            height: 70vh;
+            height: 55vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -67,99 +71,91 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
-            color: #fff;
-            text-shadow: 4px 4px #ff00ff;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
 
-        .hero span {
-            color: #00ffff;
+        .hero p {
+            font-size: 1.2rem;
+            color: #88aa88;
+            margin-bottom: 35px;
+            max-width: 600px;
         }
 
-        .hero h2 {
-            font-size: 1.8rem;
-            color: #ffb703;
-            margin-bottom: 40px;
-            background: rgba(0,0,0,0.4);
-            padding: 10px 20px;
-            border-radius: 20px;
-        }
-
-        /* Game Buttons */
-        .game-btn {
+        /* Formal Action Button */
+        .hacker-btn {
             display: inline-block;
-            padding: 15px 40px;
-            background: #ff00ff;
-            color: white;
+            padding: 12px 30px;
+            background: transparent;
+            color: #00ff00;
             text-decoration: none;
+            font-size: 1rem;
             font-weight: bold;
-            font-size: 1.5rem;
-            border: 4px solid #ffffff;
-            border-radius: 50px;
-            box-shadow: 0 8px 0 #b500b5, 0 15px 20px rgba(0,0,0,0.5);
-            transition: 0.1s;
+            border: 1px solid #00ff00;
+            transition: all 0.3s ease;
             cursor: pointer;
+            letter-spacing: 1px;
         }
 
-        .game-btn:hover {
-            transform: translateY(3px);
-            box-shadow: 0 5px 0 #b500b5, 0 10px 15px rgba(0,0,0,0.5);
-            background: #00ffff;
-            color: #000;
+        .hacker-btn:hover {
+            background: #00ff00;
+            color: #050505;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
         }
 
-        /* Main Game Grid */
+        /* Main Information Grid */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            padding: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px 40px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         .card {
-            background: #251244;
+            background: #0a0a0a;
             padding: 30px;
-            border-radius: 25px;
-            border: 4px solid #00ffff;
-            box-shadow: 5px 5px 0px #ff00ff;
-            text-align: center;
+            border: 1px solid #224422;
+            transition: border 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #00ff00;
         }
 
         .card h3 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
-            color: #ffb703;
+            color: #ffffff;
+            border-bottom: 1px dashed #224422;
+            padding-bottom: 5px;
         }
 
         .card p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            color: #fff;
+            font-size: 1rem;
+            color: #aaccaa;
         }
 
-        /* SIUUU Banner */
+        /* Footer System Status */
         .motto-bar {
-            background: #ff00ff;
-            color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-shadow: 2px 2px #000;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #446644;
             margin-top: 40px;
+            border-top: 1px dashed #224422;
         }
 
-        /* Secret Stats Page Overlay */
+        /* Hidden Profile Overlay */
         .secret-page {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #0b021a;
+            background: #050505;
             z-index: 1000;
             display: none;
             flex-direction: column;
@@ -169,103 +165,104 @@
         }
 
         .secret-card {
-            background: #1a0933;
-            border: 6px solid #ffb703;
+            background: #0a0a0a;
+            border: 1px solid #00ff00;
             padding: 40px;
-            border-radius: 30px;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 0 30px #ffb703;
+            max-width: 650px;
+            width: 100%;
         }
 
         .secret-card h2 {
-            font-size: 3rem;
-            color: #00ffff;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px #ff00ff;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 10px;
         }
 
         .secret-card ul {
             list-style: none;
             text-align: left;
-            margin: 20px 0;
+            margin-bottom: 30px;
         }
 
         .secret-card li {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             margin-bottom: 15px;
-            color: #fff;
+            color: #aaccaa;
+        }
+
+        .secret-card strong {
+            color: #00ff00;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Scoreboard Bar -->
+    <!-- Top Navigation Bar -->
     <nav>
-        <div class="logo">🎮 Rivaan Singh</div>
-        <div style="color: #ffb703; font-weight: bold;">SCORE: 999999</div>
+        <div class="logo">RIVAAN SINGH // PROFILE</div>
+        <div class="status">[ SYSTEM: READY ]</div>
     </nav>
 
-    <!-- Main Game Lobby -->
+    <!-- Main Introduction -->
     <section class="hero">
-        <h1>LEVEL 1: <span>RIVAAN!</span></h1>
-        <h2>Goal Scoring Striker & Rockin' Drummer!</h2>
-        <!-- Button to unlock secret page -->
-        <button class="game-btn" onclick="openSecretPage()">👉 CLICK FOR MY SECRET BIO! 👈</button>
+        <h1>RIVAAN SINGH</h1>
+        <p>Student profile focusing on athletics, musical performance, and technology solutions.</p>
+        <button class="hacker-btn" onclick="openSecretPage()">VIEW DETAILED SUMMARY</button>
     </section>
 
-    <!-- Game Card Grid -->
+    <!-- Primary Activities Grid -->
     <div class="grid-container">
-        <!-- Football Power Card -->
+        <!-- Football Overview -->
         <div class="card">
-            <h3>⚽ Soccer Power-Up</h3>
-            <p>I play for my awesome school team! I love crushing goals like Cristiano Ronaldo. SIUUUU!</p>
+            <h3>Athletics & Football</h3>
+            <p>Active member of the official school football team. Inspired by the tactical excellence, dedication, and playstyle of Cristiano Ronaldo.</p>
         </div>
 
-        <!-- Drums Power Card -->
+        <!-- Drums Overview -->
         <div class="card">
-            <h3>🥁 Beat Booster</h3>
-            <p>Smashing the drums and making crazy loud rhythms! Keeping the band in full blast mode!</p>
+            <h3>Musical Performance</h3>
+            <p>Dedicated drummer focusing on high-tempo rhythms, technical precision, and ensemble performances with the school band.</p>
         </div>
     </div>
 
+    <!-- System Status Footer -->
     <div class="motto-bar">
-        PRESS START TO SIUUUUU!
+        CR7 MENTALITY ENGAGED // COPYRIGHT RIVAAN SINGH
     </div>
 
-    <!-- SECRET ABOUT ME PAGE (Hidden until clicked) -->
+    <!-- DETAILED PROFILE OVERLAY (Triggered by Button) -->
     <div class="secret-page" id="secretPage">
         <div class="secret-card">
-            <h2>🔓 ACHIEVEMENT UNLOCKED!</h2>
-            <h3 style="color: #ffb703; font-size: 1.8rem;">All About Me:</h3>
+            <h2>TECHNICAL & CREATIVE SKILLS</h2>
             <ul>
-                <li>🥁 **Drum Master:** I go to the amazing **Euphony Centre of Performing Arts** to practice my epic drum beats!</li>
-                <li>💻 **Coding Genius:** I love coding cool video games and fun scripts on computers!</li>
-                <li>⚡ **Electronics Whiz:** Building cool gadgets and playing with electronics is my jam!</li>
+                <li><strong>Music Education:</strong> Currently studying advanced percussion and drumming at the Euphony Centre of Performing Arts.</li>
+                <li><strong>Software Development:</strong> Interested in computer programming, logical problem solving, and script design.</li>
+                <li><strong>Hardware & Electronics:</strong> Studying the fundamentals of electronic engineering and circuit design.</li>
             </ul>
-            <button class="game-btn" onclick="closeSecretPage()" style="background: #00ffff; color: black; border-color: black;">⬅️ GO BACK</button>
+            <button class="hacker-btn" onclick="closeSecretPage()">RETURN TO MAIN SCREEN</button>
         </div>
     </div>
 
-    <!-- Code Engine (JavaScript) -->
+    <!-- JavaScript Control System -->
     <script>
-        /* Cursor Trail Logic */
+        /* Formal 0 and 1 Cursor Trail Execution */
         document.addEventListener('mousemove', (e) => {
             const particle = document.createElement('div');
             particle.classList.add('trail-particle');
+            
+            // Random binary selection
+            particle.innerText = Math.random() > 0.5 ? "1" : "0";
+            
             particle.style.left = e.clientX + 'px';
             particle.style.top = e.clientY + 'px';
-            
-            // Random cool sizes
-            const size = Math.random() * 12 + 6;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
             
             document.body.appendChild(particle);
             setTimeout(() => { particle.remove(); }, 500);
         });
 
-        /* Page Switcher Functions */
+        /* Profile Window Controls */
         function openSecretPage() {
             document.getElementById('secretPage').style.display = 'flex';
         }
