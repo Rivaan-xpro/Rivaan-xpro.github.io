@@ -3,245 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rivaan | Official Site</title>
+    <title>Rivaan Singh | Player 1</title>
     <style>
-        /* Base Themes */
+        /* Gaming Theme Settings */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            text-transform: uppercase;
+            font-family: 'Comic Sans MS', 'Impact', sans-serif;
         }
 
         body {
-            background-color: #0d0d0d;
+            background-color: #120428; /* Deep Space Purple */
             color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* Mouse Trail Styling */
+        /* Neon Mouse Trail */
         .trail-particle {
             position: fixed;
             pointer-events: none;
-            width: 8px;
-            height: 8px;
-            background: #39ff14; /* Neon Green */
-            box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+            width: 12px;
+            height: 12px;
+            background: #00ffff; /* Neon Cyan */
+            box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            animation: fadeOut 0.6s linear forwards;
+            animation: explode 0.5s linear forwards;
             z-index: 9999;
         }
 
-        @keyframes fadeOut {
+        @keyframes explode {
             0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
         }
 
-        /* Navigation */
+        /* Header / Navbar */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background: rgba(20, 20, 20, 0.9);
-            border-bottom: 2px solid #39ff14;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 20px 40px;
+            background: #1a0933;
+            border-bottom: 4px dashed #ff00ff;
         }
 
         .logo {
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            color: #ffffff;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 3px 3px #ff00ff;
         }
 
-        .logo span {
-            color: #39ff14;
-        }
-
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #39ff14;
-        }
-
-        /* Hero Section */
+        /* Hero Screen */
         .hero {
-            height: 80vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(180deg, #141414 0%, #0d0d0d 100%);
             padding: 20px;
         }
 
         .hero h1 {
-            font-size: 5rem;
-            letter-spacing: 4px;
-            line-height: 1;
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 4px 4px #ff00ff;
             margin-bottom: 10px;
         }
 
-        .hero h2 {
-            font-size: 2rem;
-            color: #888;
-            margin-bottom: 30px;
-        }
-
         .hero span {
-            color: #39ff14;
-            display: block;
+            color: #00ffff;
         }
 
-        .btn {
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #ffb703;
+            margin-bottom: 40px;
+            background: rgba(0,0,0,0.4);
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        /* Game Buttons */
+        .game-btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: #39ff14;
-            color: #000;
+            padding: 15px 40px;
+            background: #ff00ff;
+            color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+            font-size: 1.5rem;
+            border: 4px solid #ffffff;
+            border-radius: 50px;
+            box-shadow: 0 8px 0 #b500b5, 0 15px 20px rgba(0,0,0,0.5);
+            transition: 0.1s;
+            cursor: pointer;
         }
 
-        .btn:hover {
-            background: #fff;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-            transform: translateY(-3px);
+        .game-btn:hover {
+            transform: translateY(3px);
+            box-shadow: 0 5px 0 #b500b5, 0 10px 15px rgba(0,0,0,0.5);
+            background: #00ffff;
+            color: #000;
         }
 
-        /* Grid Grid Layout */
+        /* Main Game Grid */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 50px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .card {
-            background: #161616;
-            padding: 40px;
-            border-radius: 10px;
-            border-left: 5px solid #39ff14;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            background: #1f1f1f;
+            background: #251244;
+            padding: 30px;
+            border-radius: 25px;
+            border: 4px solid #00ffff;
+            box-shadow: 5px 5px 0px #ff00ff;
+            text-align: center;
         }
 
         .card h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
-            color: #39ff14;
+            color: #ffb703;
         }
 
         .card p {
-            font-family: 'Arial', sans-serif;
-            text-transform: none;
-            color: #ccc;
-            line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #fff;
         }
 
-        /* Footer / SIUUU Section */
+        /* SIUUU Banner */
         .motto-bar {
-            background: #39ff14;
-            color: #000;
+            background: #ff00ff;
+            color: white;
             text-align: center;
-            padding: 40px;
-            font-size: 3rem;
-            letter-spacing: 5px;
-            font-weight: 900;
+            padding: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px #000;
+            margin-top: 40px;
         }
 
-        /* Responsive Layouts */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            nav { padding: 20px; }
-            .nav-links { display: none; } /* Keeps layout clean on phones */
+        /* Secret Stats Page Overlay */
+        .secret-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0b021a;
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .secret-card {
+            background: #1a0933;
+            border: 6px solid #ffb703;
+            padding: 40px;
+            border-radius: 30px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 0 30px #ffb703;
+        }
+
+        .secret-card h2 {
+            font-size: 3rem;
+            color: #00ffff;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px #ff00ff;
+        }
+
+        .secret-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .secret-card li {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation -->
+    <!-- Top Scoreboard Bar -->
     <nav>
-        <div class="logo">RIVAAN<span>7</span></div>
-        <div class="nav-links">
-            <a href="#football">Football</a>
-            <a href="#drums">Drums</a>
-        </div>
+        <div class="logo">🎮 Rivaan Singh</div>
+        <div style="color: #ffb703; font-weight: bold;">SCORE: 999999</div>
     </nav>
 
-    <!-- Main Dynamic Greeting -->
+    <!-- Main Game Lobby -->
     <section class="hero">
-        <h1>Fast Beats. <span>Faster Feet.</span></h1>
-        <h2>Striker • Drummer • CR7 Fanatic</h2>
-        <a href="#football" class="btn">Enter The Pitch</a>
+        <h1>LEVEL 1: <span>RIVAAN!</span></h1>
+        <h2>Goal Scoring Striker & Rockin' Drummer!</h2>
+        <!-- Button to unlock secret page -->
+        <button class="game-btn" onclick="openSecretPage()">👉 CLICK FOR MY SECRET BIO! 👈</button>
     </section>
 
-    <!-- Content Sections Grid -->
+    <!-- Game Card Grid -->
     <div class="grid-container">
-        <!-- Football Bio -->
-        <div class="card" id="football">
-            <h3>⚽ Pitch Attack</h3>
-            <p>Channeling the ultimate CR7 mentality on the school soccer team. Known for unmatched speed, aggressive strikes, and dominating the wing wearing the legendary number 7.</p>
+        <!-- Football Power Card -->
+        <div class="card">
+            <h3>⚽ Soccer Power-Up</h3>
+            <p>I play for my awesome school team! I love crushing goals like Cristiano Ronaldo. SIUUUU!</p>
         </div>
 
-        <!-- Drum Bio -->
-        <div class="card" id="drums">
-            <h3>🥁 Stage Rhythm</h3>
-            <p>Bringing massive power behind the drum kit. Locking down heavy rock beats, high-tempo fills, and keeping the absolute energy alive for the school band sessions.</p>
+        <!-- Drums Power Card -->
+        <div class="card">
+            <h3>🥁 Beat Booster</h3>
+            <p>Smashing the drums and making crazy loud rhythms! Keeping the band in full blast mode!</p>
         </div>
     </div>
 
-    <!-- Dynamic Outro Bar -->
     <div class="motto-bar">
-        SIUUUUUU!
+        PRESS START TO SIUUUUU!
     </div>
 
-    <!-- Mouse Trail Logic Script -->
+    <!-- SECRET ABOUT ME PAGE (Hidden until clicked) -->
+    <div class="secret-page" id="secretPage">
+        <div class="secret-card">
+            <h2>🔓 ACHIEVEMENT UNLOCKED!</h2>
+            <h3 style="color: #ffb703; font-size: 1.8rem;">All About Me:</h3>
+            <ul>
+                <li>🥁 **Drum Master:** I go to the amazing **Euphony Centre of Performing Arts** to practice my epic drum beats!</li>
+                <li>💻 **Coding Genius:** I love coding cool video games and fun scripts on computers!</li>
+                <li>⚡ **Electronics Whiz:** Building cool gadgets and playing with electronics is my jam!</li>
+            </ul>
+            <button class="game-btn" onclick="closeSecretPage()" style="background: #00ffff; color: black; border-color: black;">⬅️ GO BACK</button>
+        </div>
+    </div>
+
+    <!-- Code Engine (JavaScript) -->
     <script>
+        /* Cursor Trail Logic */
         document.addEventListener('mousemove', (e) => {
             const particle = document.createElement('div');
             particle.classList.add('trail-particle');
-            
-            // Assign coordinate positions
             particle.style.left = e.clientX + 'px';
             particle.style.top = e.clientY + 'px';
             
-            // Randomize size slightly for an organic look
-            const size = Math.random() * 8 + 4;
+            // Random cool sizes
+            const size = Math.random() * 12 + 6;
             particle.style.width = size + 'px';
             particle.style.height = size + 'px';
             
             document.body.appendChild(particle);
-            
-            // Automatically clean up old elements
-            setTimeout(() => {
-                particle.remove();
-            }, 600);
+            setTimeout(() => { particle.remove(); }, 500);
         });
+
+        /* Page Switcher Functions */
+        function openSecretPage() {
+            document.getElementById('secretPage').style.display = 'flex';
+        }
+
+        function closeSecretPage() {
+            document.getElementById('secretPage').style.display = 'none';
+        }
     </script>
 
 </body>
 </html>
-
