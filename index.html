@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rivaan Singh | Profile</title>
     <style>
-        /* Formal Hacker Layout */
+        /* Responsive Formal Hacker Layout */
         * {
             margin: 0;
             padding: 0;
@@ -18,18 +18,19 @@
             color: #00ff00; /* Terminal Green */
             overflow-x: hidden;
             line-height: 1.6;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Binary Mouse Trail */
+        /* Binary Touch/Mouse Trail */
         .trail-particle {
             position: fixed;
             pointer-events: none;
             color: #00ff00;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
             text-shadow: 0 0 5px #00ff00;
             transform: translate(-50%, -50%);
-            animation: fadeDown 0.5s ease-out forwards;
+            animation: fadeDown 0.4s ease-out forwards;
             z-index: 9999;
         }
 
@@ -41,102 +42,105 @@
         /* Header Navigation */
         nav {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 20px;
             background: #0a0a0a;
             border-bottom: 1px solid #00ff00;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             font-weight: bold;
             letter-spacing: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .status {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #00ff00;
+            background: rgba(0, 255, 0, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
         }
 
         /* Hero Welcome Screen */
         .hero {
-            height: 55vh;
+            min-height: 45vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
             letter-spacing: 2px;
+            word-break: break-word;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #88aa88;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             max-width: 600px;
-        }
-
-        /* Button Alignment Flex Box */
-        .btn-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         /* Formal Action Button */
         .hacker-btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 14px 28px;
             background: transparent;
             color: #00ff00;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
             border: 1px solid #00ff00;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             cursor: pointer;
             letter-spacing: 1px;
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
         }
 
-        .hacker-btn:hover {
+        .hacker-btn:active, .hacker-btn:hover {
             background: #00ff00;
             color: #050505;
             box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
         }
 
-        /* Styling Modification for Football Target Button */
-        .hacker-btn.football-link {
-            color: #ffffff;
-            border-color: #ffffff;
-        }
-
-        .hacker-btn.football-link:hover {
-            background: #ffffff;
-            color: #050505;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-        }
-
         /* Main Information Grid */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 10px 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
+        @media (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 { font-size: 2.8rem; }
+            .logo { font-size: 1.2rem; }
+            .hacker-btn { width: auto; }
+        }
+
         .card {
             background: #0a0a0a;
-            padding: 30px;
+            padding: 25px;
             border: 1px solid #224422;
             transition: border 0.3s ease;
         }
@@ -146,26 +150,27 @@
         }
 
         .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: #ffffff;
             border-bottom: 1px dashed #224422;
             padding-bottom: 5px;
         }
 
         .card p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #aaccaa;
         }
 
         /* Footer System Status */
         .motto-bar {
             text-align: center;
-            padding: 30px;
-            font-size: 0.9rem;
+            padding: 25px 20px;
+            font-size: 0.8rem;
             color: #446644;
             margin-top: 40px;
             border-top: 1px dashed #224422;
+            word-wrap: break-word;
         }
 
         /* Hidden Profile Overlay */
@@ -181,39 +186,57 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
+            overflow-y: auto;
         }
 
         .secret-card {
             background: #0a0a0a;
             border: 1px solid #00ff00;
-            padding: 40px;
+            padding: 25px 20px;
             max-width: 650px;
             width: 100%;
+            margin: auto;
         }
 
         .secret-card h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #ffffff;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 1px solid #00ff00;
             padding-bottom: 10px;
+            letter-spacing: 1px;
         }
 
         .secret-card ul {
             list-style: none;
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .secret-card li {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             margin-bottom: 15px;
             color: #aaccaa;
+            line-height: 1.5;
+            border-left: 2px solid #224422;
+            padding-left: 10px;
         }
 
         .secret-card strong {
             color: #00ff00;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .secret-link {
+            color: #00ff00;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+
+        .secret-card .hacker-btn {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -221,20 +244,15 @@
 
     <!-- Top Navigation Bar -->
     <nav>
-        <div class="logo">RIVAAN SINGH // PROFILE</div>
-        <div class="status">[ SYSTEM: READY ]</div>
+        <div class="logo">RIVAAN SINGH // PROG</div>
+        <div class="status">[ READY ]</div>
     </nav>
 
     <!-- Main Introduction -->
     <section class="hero">
         <h1>RIVAAN SINGH</h1>
         <p>Student profile focusing on athletics, musical performance, and technology solutions.</p>
-        
-        <!-- Button Flex Group Container -->
-        <div class="btn-container">
-            <button class="hacker-btn" onclick="openSecretPage()">VIEW DETAILED SUMMARY</button>
-            <a href="ronaldo.html" class="hacker-btn football-link">MY FAV PLAYER IN FOOTBALL</a>
-        </div>
+        <button class="hacker-btn" onclick="openSecretPage()">VIEW SUMMARY</button>
     </section>
 
     <!-- Primary Activities Grid -->
@@ -254,47 +272,57 @@
 
     <!-- System Status Footer -->
     <div class="motto-bar">
-        CR7 MENTALITY ENGAGED // COPYRIGHT RIVAAN SINGH
+        CR7 MENTALITY ENGAGED // © RIVAAN SINGH
     </div>
 
     <!-- DETAILED PROFILE OVERLAY (Triggered by Button) -->
     <div class="secret-page" id="secretPage">
         <div class="secret-card">
-            <h2>TECHNICAL & CREATIVE SKILLS</h2>
+            <h2>SKILLS & SOLUTIONS</h2>
             <ul>
-                <li><strong>Music Education:</strong> Currently studying advanced percussion and drumming at the Euphony Centre of Performing Arts.</li>
-                <li><strong>Software Development:</strong> Interested in computer programming, logical problem solving, and script design.</li>
-                <li><strong>Hardware & Electronics:</strong> Studying the fundamentals of electronic engineering and circuit design.</li>
-                <li><strong>Website Target:</strong> <a href="https://ishaant.com/?v2.1" target="_blank" rel="noopener noreferrer" style="color: #00ff00; text-decoration: underline;">[ VISIT ISHAANT.COM ]</a></li>
+                <li><strong>Music Education:</strong> Advanced percussion and drumming at Euphony Centre of Performing Arts.</li>
+                <li><strong>Software Development:</strong> Computer programming, logical problem solving, and script design.</li>
+                <li><strong>Hardware & Electronics:</strong> Fundamentals of electronic engineering and circuit design.</li>
+                <li><strong>Network Node:</strong> Visit <a href="https://ishaant.com" class="secret-link">://ishaant.com</a></li>
             </ul>
-            <button class="hacker-btn" onclick="closeSecretPage()">RETURN TO MAIN SCREEN</button>
+            <button class="hacker-btn" onclick="closeSecretPage()">RETURN</button>
         </div>
     </div>
 
     <!-- JavaScript Control System -->
     <script>
-        /* Formal 0 and 1 Cursor Trail Execution */
-        document.addEventListener('mousemove', (e) => {
+        /* Unified Touch & Mouse Trail Execution */
+        function spawnParticle(x, y) {
             const particle = document.createElement('div');
             particle.classList.add('trail-particle');
-            
-            // Random binary selection
             particle.innerText = Math.random() > 0.5 ? "1" : "0";
-            
-            particle.style.left = e.clientX + 'px';
-            particle.style.top = e.clientY + 'px';
-            
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
             document.body.appendChild(particle);
-            setTimeout(() => { particle.remove(); }, 500);
+            setTimeout(() => { particle.remove(); }, 400);
+        }
+
+        // Mouse Move for Desktop
+        document.addEventListener('mousemove', (e) => {
+            spawnParticle(e.clientX, e.clientY);
         });
+
+        // Touch Move for Mobile Devices
+        document.addEventListener('touchmove', (e) => {
+            if(e.touches.length > 0) {
+                spawnParticle(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
 
         /* Profile Window Controls */
         function openSecretPage() {
             document.getElementById('secretPage').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
         }
 
         function closeSecretPage() {
             document.getElementById('secretPage').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
     </script>
 
