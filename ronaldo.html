@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR7 Mentality | Cristiano Ronaldo</title>
+    <style>
+        /* Shared Formal Hacker Layout Aesthetics */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #050505;
+            color: #00ff00;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Mouse Particles */
+        .trail-particle {
+            position: fixed;
+            pointer-events: none;
+            color: #00ff00;
+            font-size: 15px;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ff00;
+            transform: translate(-50%, -50%);
+            animation: fadeDown 0.5s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes fadeDown {
+            0% { opacity: 1; transform: translate(-50%, -50%) translateY(0); }
+            100% { opacity: 0; transform: translate(-50%, -50%) translateY(10px); }
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #0a0a0a;
+            border-bottom: 1px solid #00ff00;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Hero / Goal Tracker Display */
+        .hero {
+            padding: 60px 20px 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        /* Interactive Goal Counter Matrix */
+        .counter-box {
+            background: #0a0a0a;
+            border: 2px dashed #00ff00;
+            padding: 25px 50px;
+            margin: 20px 0 35px 0;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+        }
+
+        .counter-number {
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            letter-spacing: 4px;
+        }
+
+        .counter-label {
+            font-size: 0.9rem;
+            color: #88aa88;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Hacker Buttons */
+        .hacker-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 1px solid #00ff00;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .hacker-btn:hover {
+            background: #00ff00;
+            color: #050505;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+        }
+
+        /* Information Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #0a0a0a;
+            padding: 30px;
+            border: 1px solid #224422;
+            transition: border 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #00ff00;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            border-bottom: 1px dashed #224422;
+            padding-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #aaccaa;
+        }
+
+        /* Footer System Status */
+        .motto-bar {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #446644;
+            margin-top: 40px;
+            border-top: 1px dashed #224422;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav>
+        <div class="logo">CR7 DATABASE // OPERATIONAL</div>
+        <div>
+            <a href="index.html" class="hacker-btn" style="padding: 6px 15px; font-size: 0.8rem;">[ BACK TO HOME ]</a>
+        </div>
+    </nav>
+
+    <!-- Main Introduction & Live Goal Counter -->
+    <section class="hero">
+        <h1>CRISTIANO RONALDO</h1>
+        <p>Analyzing the historical metrics and unparalleled output of the ultimate football predator.</p>
+        
+        <!-- Live Ticking Matrix Counter Container -->
+        <div class="counter-box">
+            <div class="counter-number" id="goalCounter">000</div>
+            <div class="counter-label">> Official Senior Career Goals // Road To 1000</div>
+        </div>
+    </section>
+
+    <!-- Primary Commentary Grid -->
+    <div class="grid-container">
+        <!-- Reason 1: Obsessive Elite Discipline -->
+        <div class="card">
+            <h3>01 // Elite Obsessive Discipline</h3>
+            <p>Ronaldo proves that talent is completely useless without structured hard work. His elite daily recovery, dietary discipline, and continuous physical adaptation have kept him dominant at the highest echelons of football well into his 40s.</p>
+        </div>
+
+        <!-- Reason 2: Clutch Match Execution -->
+        <div class="card">
+            <h3>02 // Cold-Blooded Clutch Execution</h3>
+            <p>When tactical systems break down under immense pressure, he consistently delivers. From iconic UEFA Champions League hat-tricks to crucial international penalties, his psychological composure makes him the greatest big-game weapon in history.</p>
+        </div>
+
+        <!-- Reason 3: The CR7 Mentality Protocol -->
+        <div class="card">
+            <h3>03 // The CR7 Mentality Protocol</h3>
+            <p>The "CR7 Mentality" is a core architecture for constant self-improvement. He never accepts current success as a stopping point, treating past records as benchmarks to break, showcasing a relentless mindset that inspires my own training goals.</p>
+        </div>
+    </div>
+
+    <!-- System Status Footer -->
+    <div class="motto-bar">
+        CR7 PROTOCOL ACTIVATED // LIVE COUNTDOWN VERIFIED VIA COMPETITIVE MATCH TRACKING
+    </div>
+
+    <!-- JavaScript Handling Code -->
+    <script>
+        /* Matrix Target Goal Value (As of August 2026) */
+        const targetGoals = 976; 
+        const duration = 1500; // Counter animation speed in milliseconds
+
+        function animateCounter() {
+            const counterElement = document.getElementById('goalCounter');
+            const startTime = performance.now();
+
+            function updateNumber(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                
+                // Exponential easing effect for a smoother tracking deceleration
+                const easeOutQuad = progress * (2 - progress);
+                const currentCount = Math.floor(easeOutQuad * targetGoals);
+                
+                counterElement.innerText = currentCount;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    counterElement.innerText = targetGoals;
+                }
+            }
+            requestAnimationFrame(updateNumber);
+        }
+
+        // Initialize counter execution on window load sequence
+        window.addEventListener('DOMContentLoaded', animateCounter);
+
+        /* Formal Binary Mouse Particle Generator */
+        document.addEventListener('mousemove', (e) => {
+            const particle = document.createElement('div');
+            particle.classList.add('trail-particle');
+            particle.innerText = Math.random() > 0.5 ? "1" : "0";
+            particle.style.left = e.clientX + 'px';
+            particle.style.top = e.clientY + 'px';
+            document.body.appendChild(particle);
+            setTimeout(() => { particle.remove(); }, 500);
+        });
+    </script>
+
+</body>
+</html>
